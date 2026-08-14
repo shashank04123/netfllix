@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="loader-screen" id="loader"><span class="loader-logo">NETFLIX</span></div>
+
+<header class="top-nav" id="topNav">
+  <div class="nav-left">
+    <a href="browse.html" class="logo" style="font-size:1.5rem;">NETFLIX</a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="browse.html" class="active" data-filter="all">Home</a></li>
+        <li><a href="#" data-filter="series">TV Shows</a></li>
+        <li><a href="#" data-filter="movies">Movies</a></li>
+        <li><a href="#" data-filter="new">New &amp; Popular</a></li>
+        <li><a href="#" id="myListLink" data-filter="mylist">My List</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="nav-right">
+    <div class="search-wrap" id="searchWrap">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <input type="text" class="search-input" id="searchInput" placeholder="Titles, people, genres">
+    </div>
+    <button class="icon-btn" id="notifBtn" aria-label="Notifications" style="position:relative;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+    </button>
+
+    <div class="profile-menu" id="profileMenu">
+      <button class="profile-trigger" id="profileTrigger">
+        <img class="avatar" src="https://picsum.photos/seed/nf-avatar-red/64/64" alt="">
+        <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="profile-dropdown">
+        <a href="#"><img src="https://picsum.photos/seed/nf-avatar-red/64/64" alt=""><span>My Profile</span></a>
+        <a href="#"><img src="https://picsum.photos/seed/nf-avatar-blue/64/64" alt=""><span>Kids</span></a>
+        <hr>
+        <a href="#"><span>Manage Profiles</span></a>
+        <a href="#"><span>Account</span></a>
+        <a href="#"><span>Help Center</span></a>
+        <hr>
+        <button id="signOutBtn"><span>Sign out of Netflix</span></button>
+      </div>
+    </div>
+
+    <button class="icon-btn mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="mainContent">
+  <section class="browse-hero" id="browseHero">
+    <div class="browse-hero-content">
+      <div class="hero-badge"><span class="n-icon">N</span> <span id="heroTagline">SERIES</span></div>
+      <h1 id="heroTitle"></h1>
+      <div class="hero-meta">
+        <span class="match" id="heroMatch"></span>
+        <span id="heroYear"></span>
+        <span class="rated" id="heroRated"></span>
+        <span id="heroDuration"></span>
+      </div>
+      <p class="desc" id="heroDesc"></p>
+      <div class="hero-buttons">
+        <button class="btn-hero play" id="heroPlayBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Play
+        </button>
+        <button class="btn-hero info" id="heroInfoBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          More Info
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="rows-wrap" id="rowsWrap"></div>
+
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <h2>Your list is empty</h2>
+    <p>Add shows and movies that you want to watch by selecting the ✚ icon on a title.</p>
+  </div>
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<footer class="browse-footer">
+  <div class="footer-links">
+    <a href="#">FAQ</a>
+    <a href="#">Help Center</a>
+    <a href="#">Account</a>
+    <a href="#">Media Center</a>
+    <a href="#">Investor Relations</a>
+    <a href="#">Jobs</a>
+    <a href="#">Ways to Watch</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Privacy</a>
+    <a href="#">Cookie Preferences</a>
+    <a href="#">Corporate Information</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Speed Test</a>
+    <a href="#">Legal Notices</a>
+  </div>
+  <p class="footer-legal">This is a front-end clone project built for learning purposes only. Not affiliated with Netflix, Inc.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/browse.js"></script>
+</body>
+</html>
